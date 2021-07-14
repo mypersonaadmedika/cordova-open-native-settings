@@ -60,16 +60,16 @@ public class NativeSettings extends CordovaPlugin {
             intent = new Intent(android.provider.Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS);
         } else if (action.equals("biometric")) {
 
-            intent = new Intent();
+            // intent = new Intent();
             // Uncomment the below code when Cordova supports Android 30 / R
 			/*if(android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){
                 intent = new Intent(android.provider.Settings.ACTION_BIOMETRIC_ENROLL);
-            } else */ if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            } else  if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
                 intent = new Intent(android.provider.Settings.ACTION_FINGERPRINT_ENROLL);
-            } else {
+            } else {*/ 
                 // Atleast open the settings landing page
                 intent = new Intent(android.provider.Settings.ACTION_SETTINGS);
-            }
+            // }
         } else if (action.equals("bluetooth")) {
             intent = new Intent(android.provider.Settings.ACTION_BLUETOOTH_SETTINGS);
         } else if (action.equals("captioning")) {
